@@ -11,3 +11,17 @@ function post(path, body) {
         body: JSON.stringify(body)
     }).then(r => r.json());
 }
+
+function put(path, body) {
+    return fetch(api + path, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+    }).then(r => r.json());
+}
+
+function del(path) {
+    return fetch(api + path, {
+        method: 'DELETE'
+    }).then(r => r.json());
+}
